@@ -21,9 +21,10 @@ A suite of productivity-enhancing modules for Odoo 18, specifically designed wit
 
 ## 📦 Available Modules
 
-| Module | Description | Special Requirements |
-|--------|-------------|----------------------|
+| Module  | Description | Special Requirements |
+|---------|-------------|----------------------|
 | Podcast | Manage podcast channels and episodes | Shenoto API (optional) |
+| Aparat  | Aparat compatibility with odoo |  |
 
 ---
 
