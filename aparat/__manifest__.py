@@ -5,7 +5,6 @@
     'author': 'Tashilgostar',
     'website': 'https://tashilgostar.com',
     'support': 'support@tashilgostar.com',
-    'live_test_url': 'https://sazmanyar.tashilgostar.com',
     'version': '18.0.1.0.0',
     'description': '''
 Odoo Aparat module.
