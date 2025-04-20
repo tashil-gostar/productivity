@@ -16,7 +16,7 @@ Live Demo
 ------------
 
 Experience the module in action:
-**Demo URL:** https://sazmanyar.tashilgostar.com/podcasts
+**Demo URL:** https://www.tashilgostar.com/slides/slide/149/share
 
 ------------
 Features
