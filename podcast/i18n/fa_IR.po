@@ -1,0 +1,712 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* podcast
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20250325\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-14 19:22+0000\n"
+"PO-Revision-Date: 2025-04-14 19:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_channel_kanban
+msgid "<span class=\"text-bg-danger\">Archived</span>"
+msgstr "<span class=\"text-bg-danger\">بایگانی‌شده</span>"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_episode_kanban
+msgid "<span class=\"text-muted\">Channel: </span>"
+msgstr "<span class=\"text-muted\">کانال: </span>"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_channel_kanban
+msgid "<span class=\"text-muted\">Contributors</span>"
+msgstr "<span class=\"text-muted\">شرکت‌کنندگان</span>"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_channel_kanban
+msgid "<span class=\"text-muted\">Links</span>"
+msgstr "<span class=\"text-muted\">لینک‌ها</span>"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__message_needaction
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__message_needaction
+msgid "Action Needed"
+msgstr "نیازمند اقدام"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__active
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__active
+msgid "Active"
+msgstr "فعال"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_channel_form
+msgid "Active channel"
+msgstr "کانال فعال"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_episode_form
+msgid "Active episode"
+msgstr "اپیزود فعال"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__activity_ids
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__activity_ids
+msgid "Activities"
+msgstr "فعالیت‌ها"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__activity_exception_decoration
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "دکوراسیون استثنا فعالیت"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__activity_state
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__activity_state
+msgid "Activity State"
+msgstr "وضعیت فعالیت"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__activity_type_icon
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "آیکون نوع فعالیت"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_channel_form
+msgid "Add Episode"
+msgstr "افزودن اپیزود"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__message_attachment_count
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__message_attachment_count
+msgid "Attachment Count"
+msgstr "تعداد پیوست"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.podcast_episode_wizard_form
+msgid "Cancel"
+msgstr "لغو"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__channel_id
+#: model:ir.model.fields,field_description:podcast.field_res_partner__channel_id
+#: model:ir.model.fields,field_description:podcast.field_res_users__channel_id
+msgid "Channel"
+msgstr "کانال"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_channel_form
+msgid "Channel Title"
+msgstr "عنوان کانال"
+
+#. module: podcast
+#: model:ir.actions.act_window,name:podcast.action_website_podcast_channel
+#: model:ir.ui.menu,name:podcast.menu_website_podcast_channel
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_channel_form
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_channel_list
+msgid "Channels"
+msgstr "کانال‌ها"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__color
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__color
+msgid "Color Index"
+msgstr "شاخص رنگ"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_channel_form
+msgid ""
+"Common tasks for a computer scientist is asking the right questions...."
+msgstr ""
+"یکی از رایج‌ترین کارهای متخصص کامپیوتر این است که سؤال‌های درستی بپرسد..."
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.podcast_episode_wizard_form
+msgid "Confirm"
+msgstr "تأیید"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__contributors
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__contributors
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_episode_form
+msgid "Contributors"
+msgstr "شرکت‌کنندگان"
+
+#. module: podcast
+#: model:ir.model,name:podcast.model_podcast_episode_wizard
+msgid "Create Episode from Shenoto API"
+msgstr "ایجاد اپیزود از طریق API شنوتو"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__create_uid
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__create_uid
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode_wizard__create_uid
+#: model:ir.model.fields,field_description:podcast.field_podcast_link__create_uid
+msgid "Created by"
+msgstr "ایجاد شده توسط"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__create_date
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__create_date
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode_wizard__create_date
+#: model:ir.model.fields,field_description:podcast.field_podcast_link__create_date
+msgid "Created on"
+msgstr "ایجاد شده در"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_channel_kanban
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_episode_kanban
+msgid "Delete"
+msgstr "حذف"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_episode_form
+msgid "Describe what's happening in this episode in few lines"
+msgstr "در چند سطر موضوع بحث شده در این اپیزود را شرح دهید"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_channel_form
+msgid "Describe what's happening in this podcast in few lines"
+msgstr "در چند سطر موضوع بحث شده در این اپیزود را شرح دهید"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__description
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__description
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_channel_form
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_episode_form
+msgid "Description"
+msgstr "توضیح"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_channel_form
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_episode_form
+msgid "Display"
+msgstr "نمایش"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__display_name
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__display_name
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode_wizard__display_name
+#: model:ir.model.fields,field_description:podcast.field_podcast_link__display_name
+msgid "Display Name"
+msgstr "نام نمایشی"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__formatted_duration
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__duration
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_episode_form
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_episode_kanban
+msgid "Duration"
+msgstr "مدت زمان"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_channel_kanban
+msgid "Duration:"
+msgstr "مدت زمان"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_channel_kanban
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_episode_kanban
+msgid "Edit"
+msgstr "ویرایش"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__iframe_url
+msgid "Embed URL"
+msgstr "جایگذاری URL"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_channel_form
+msgid "Episode"
+msgstr "اپیزود"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_episode_form
+msgid "Episode Title"
+msgstr "عنوان اپیزود"
+
+#. module: podcast
+#: model:ir.actions.act_window,name:podcast.action_website_podcast_episode
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__episodes
+#: model:ir.ui.menu,name:podcast.menu_website_podcast_episode
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_channel_form
+msgid "Episodes"
+msgstr "اپیزودها"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_channel_kanban
+msgid "Episodes:"
+msgstr "اپیزودها:"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__external_episode_id
+msgid "External Episode ID"
+msgstr "شناسه خارجی اپیزود"
+
+#. module: podcast
+#. odoo-python
+#: code:addons/podcast/tools/shenoto_api.py:0
+msgid "Failed to fetch episode data: %s"
+msgstr "دریافت داده اپیزود %s امکان‌پذیر نبود"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__file_url
+msgid "File URL"
+msgstr "URL فایل"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__message_follower_ids
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__message_follower_ids
+msgid "Followers"
+msgstr "دنبال‌کنندگان"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__message_partner_ids
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "دنبال‌کنندگان (طرف‌های همکار)"
+
+#. module: podcast
+#: model:ir.model.fields,help:podcast.field_podcast_channel__activity_type_icon
+#: model:ir.model.fields,help:podcast.field_podcast_episode__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "آیکون Fontawesome، مثال: fa-tasks"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__formatted_duration
+msgid "Formated Duration"
+msgstr "مدت زمان فرمت‌بندی شده"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_channel_form
+msgid "From Shenoto"
+msgstr "از شنوتو"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode_wizard__full_url
+msgid "Full Shenoto URL"
+msgstr "آدرس URL کامل شنوتو"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__has_message
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__has_message
+msgid "Has Message"
+msgstr "دارای پیام است"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__id
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__id
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode_wizard__id
+#: model:ir.model.fields,field_description:podcast.field_podcast_link__id
+msgid "ID"
+msgstr "شناسه (ID)"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__activity_exception_icon
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__activity_exception_icon
+#: model:ir.model.fields,field_description:podcast.field_podcast_link__icon
+msgid "Icon"
+msgstr "آیکون"
+
+#. module: podcast
+#: model:ir.model.fields,help:podcast.field_podcast_link__icon
+msgid "Icon of podcast website link"
+msgstr "آیکون لینک وب سایت پادکست"
+
+#. module: podcast
+#: model:ir.model.fields,help:podcast.field_podcast_channel__activity_exception_icon
+#: model:ir.model.fields,help:podcast.field_podcast_episode__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "آیکون برای نشان دادن فعالیت استثنا."
+
+#. module: podcast
+#: model:ir.model.fields,help:podcast.field_podcast_channel__message_needaction
+#: model:ir.model.fields,help:podcast.field_podcast_episode__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+"در صورت فعال بودن این گزینه، پیام‌های جدید نیازمند بررسی شما خواهند بود."
+
+#. module: podcast
+#: model:ir.model.fields,help:podcast.field_podcast_channel__message_has_error
+#: model:ir.model.fields,help:podcast.field_podcast_channel__message_has_sms_error
+#: model:ir.model.fields,help:podcast.field_podcast_episode__message_has_error
+#: model:ir.model.fields,help:podcast.field_podcast_episode__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "در صورت فعال بودن این گزینه، برخی پیام‌ها خطای تحویل دارند."
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__image_1920
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__image_1920
+msgid "Image"
+msgstr "تصویر"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__image_1024
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__image_1024
+msgid "Image 1024"
+msgstr "تصویر 1024"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__image_128
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__image_128
+msgid "Image 128"
+msgstr "تصویر 128"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__image_256
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__image_256
+msgid "Image 256"
+msgstr "تصویر 256"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__image_512
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__image_512
+msgid "Image 512"
+msgstr "تصویر 512"
+
+#. module: podcast
+#. odoo-python
+#: code:addons/podcast/models/podcast_episode.py:0
+#: model_terms:ir.ui.view,arch_db:podcast.podcast_episode_wizard_form
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_channel_form
+msgid "Import from Shenoto"
+msgstr "ایمپورت از شنوتو"
+
+#. module: podcast
+#: model:ir.actions.act_window,name:podcast.create_episode_shenoto_wizard_action
+msgid "Import from shenoto"
+msgstr "ایمپورت از شنوتو"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__message_is_follower
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__message_is_follower
+msgid "Is Follower"
+msgstr "دنبال می‌کند"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_res_partner__host
+#: model:ir.model.fields,field_description:podcast.field_res_users__host
+msgid "Is Host"
+msgstr "میزبان است"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__write_uid
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__write_uid
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode_wizard__write_uid
+#: model:ir.model.fields,field_description:podcast.field_podcast_link__write_uid
+msgid "Last Updated by"
+msgstr "آخرین به‌روزرسانی توسط"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__write_date
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__write_date
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode_wizard__write_date
+#: model:ir.model.fields,field_description:podcast.field_podcast_link__write_date
+msgid "Last Updated on"
+msgstr "تاریخ آخرین به‌روزرسانی"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_link_form
+msgid "Link"
+msgstr "لینک"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_link_form
+msgid "Link title"
+msgstr "عنوان لینک"
+
+#. module: podcast
+#: model:ir.actions.act_window,name:podcast.action_website_podcast_link
+#: model:ir.ui.menu,name:podcast.menu_website_podcast_link
+msgid "Links"
+msgstr "لینک‌ها"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__links_length
+msgid "Links Length"
+msgstr "طول لینک‌ها"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__listen_without_login
+msgid "Listen Without Login"
+msgstr "بدون ورود گوش دهید"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__message_has_error
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__message_has_error
+msgid "Message Delivery error"
+msgstr "خطای تحویل پیام"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__message_ids
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__message_ids
+msgid "Messages"
+msgstr "پیام‌ها"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__my_activity_date_deadline
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "سررسید فعالیت من"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_link__name
+msgid "Name"
+msgstr "نام"
+
+#. module: podcast
+#: model:ir.model.fields,help:podcast.field_podcast_link__name
+msgid "Name of podcast website link"
+msgstr "نام لینک وب سایت پادکست"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__activity_date_deadline
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "سررسید فعالیت بعدی"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__activity_summary
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__activity_summary
+msgid "Next Activity Summary"
+msgstr "خلاصه فعالیت بعدی"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__activity_type_id
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع فعالیت بعدی"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__message_needaction_counter
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__message_needaction_counter
+msgid "Number of Actions"
+msgstr "تعداد فعالیت‌ها"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__message_has_error_counter
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__message_has_error_counter
+msgid "Number of errors"
+msgstr "تعداد خطاها"
+
+#. module: podcast
+#: model:ir.model.fields,help:podcast.field_podcast_channel__message_needaction_counter
+#: model:ir.model.fields,help:podcast.field_podcast_episode__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "تعداد پیام‌های نیازمند اقدام"
+
+#. module: podcast
+#: model:ir.model.fields,help:podcast.field_podcast_channel__message_has_error_counter
+#: model:ir.model.fields,help:podcast.field_podcast_episode__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "تعداد پیام‌های دارای خطای تحویل"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_channel_form
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_episode_form
+msgid "Options"
+msgstr "گزینه‌ها"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_channel_form
+msgid "Pick a name for you podcast playlist"
+msgstr "برای لیست پخش پادکست یک نام انتخاب کنید"
+
+#. module: podcast
+#: model:ir.module.category,name:podcast.category_podcast
+#: model:ir.ui.menu,name:podcast.menu_website_podcast_root
+msgid "Podcast"
+msgstr "پادکست"
+
+#. module: podcast
+#: model:ir.model,name:podcast.model_res_partner
+msgid "Podcast Contributor"
+msgstr "مخاطب"
+
+#. module: podcast
+#: model:ir.actions.act_window,name:podcast.action_podcast_episode_form
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_episode_form
+msgid "Podcast Episode"
+msgstr "اپیزود پادکست"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_link_form
+msgid "Podcast Link"
+msgstr "لینک پادکست"
+
+#. module: podcast
+#: model:res.groups,name:podcast.group_podcast_manager
+msgid "Podcast Manager"
+msgstr "مدیر پادکست"
+
+#. module: podcast
+#: model:res.groups,name:podcast.group_podcast_user
+msgid "Podcast User"
+msgstr "مسئول پادکست"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_episode_form
+msgid "Podcast audio link"
+msgstr "لینک صوت پادکست"
+
+#. module: podcast
+#: model:ir.model,name:podcast.model_podcast_link
+msgid "Podcast external website Link"
+msgstr "لینک خارجی وب سایت پادکست"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_channel_form
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_episode_form
+msgid "Properties"
+msgstr "تنظیمات"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_episode_form
+msgid "Provide a detailed overview of this episode..."
+msgstr "توضیحات کاملی درباره این اپیزود وارد کنید..."
+
+#. module: podcast
+#: model:ir.module.category,description:podcast.category_podcast
+msgid "Public user access level for Podcast"
+msgstr "سطح دسترسی کاربر برای پادکست"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__activity_user_id
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__activity_user_id
+msgid "Responsible User"
+msgstr "کاربر مسئول"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__message_has_sms_error
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطای تحویل پیامک"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__short_description
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__short_description
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_channel_form
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_episode_form
+msgid "Short Description"
+msgstr "توضیح کوتاه"
+
+#. module: podcast
+#. odoo-python
+#: code:addons/podcast/wizards/podcast_episode_wizard.py:0
+msgid "Something wrong while fetching the data!"
+msgstr "هنگام دریافت داده خطایی رخ داد!"
+
+#. module: podcast
+#: model:ir.model.fields,help:podcast.field_podcast_channel__activity_state
+#: model:ir.model.fields,help:podcast.field_podcast_episode__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"وضعیت فعالیت‌ها\n"
+"تأخیردار: سررسید آن گذشته است\n"
+"امروز: تاریخ فعالیت امروز است\n"
+"برنامه‌ریزی شده: فعالیت‌های آینده."
+
+#. module: podcast
+#: model:ir.model.fields,help:podcast.field_podcast_episode__external_episode_id
+msgid "This is the episode ID to fetch from the external API"
+msgstr "همان شناسه (ID) اپیزود است که باید از API خارجی دریافت شود"
+
+#. module: podcast
+#: model:ir.model.fields,help:podcast.field_podcast_episode__file_url
+msgid "This is the file URL to fetch from the external API"
+msgstr "همان آدرس URL فایل برای دریافت از API خارجی است"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__title
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__title
+msgid "Title"
+msgstr "عنوان"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__duration
+msgid "Total Duration (minutes)"
+msgstr "مدت زمان کل (دقیقه)"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__total_episodes
+msgid "Total Episodes"
+msgstr "کل اپیزودها"
+
+#. module: podcast
+#: model:ir.model.fields,help:podcast.field_podcast_episode__duration
+msgid "Total duration in seconds"
+msgstr "مدت زمان کل بر حسب ثانیه"
+
+#. module: podcast
+#: model:ir.model.fields,help:podcast.field_podcast_channel__activity_exception_decoration
+#: model:ir.model.fields,help:podcast.field_podcast_episode__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع فعالیت استثنا در رکورد."
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_link__url
+msgid "URL"
+msgstr "آدرس URL"
+
+#. module: podcast
+#: model:ir.model.fields,help:podcast.field_podcast_link__url
+msgid "URL of podcast website link"
+msgstr "URL لینک وب سایت پادکست"
+
+#. module: podcast
+#: model:ir.model.fields,help:podcast.field_podcast_channel__color
+#: model:ir.model.fields,help:podcast.field_podcast_episode__color
+msgid "Used to decorate kanban view"
+msgstr "برای نمای کانبان استفاده می‌شود"
+
+#. module: podcast
+#: model:ir.model.fields,field_description:podcast.field_podcast_channel__website_message_ids
+#: model:ir.model.fields,field_description:podcast.field_podcast_episode__website_message_ids
+msgid "Website Messages"
+msgstr "پیام‌های وب سایت"
+
+#. module: podcast
+#: model:ir.model,name:podcast.model_podcast_channel
+msgid "Website Podcast Channel"
+msgstr "کانال پادکست وب سایت"
+
+#. module: podcast
+#: model:ir.model,name:podcast.model_podcast_episode
+msgid "Website Podcast Episode"
+msgstr "اپیزود پادکست"
+
+#. module: podcast
+#: model:ir.model.fields,help:podcast.field_podcast_channel__website_message_ids
+#: model:ir.model.fields,help:podcast.field_podcast_episode__website_message_ids
+msgid "Website communication history"
+msgstr "تاریخچه پیام‌ها در وب سایت"
+
+#. module: podcast
+#. odoo-python
+#: code:addons/podcast/wizards/podcast_episode_wizard.py:0
+msgid "You cannot continue without filling the required field!"
+msgstr "بدون تکمیل فیلدهای الزامی نمی‌توانید ادامه دهید!"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_episode_form
+msgid "e.g. \"Example podcast episode\""
+msgstr "مثال: اپیزود نمونه پادکست"
+
+#. module: podcast
+#: model_terms:ir.ui.view,arch_db:podcast.view_podcast_link_form
+msgid "e.g. Spotify"
+msgstr "مثال: اسپاتیفای"

@@ -1,0 +1,26 @@
+<odoo>
+    <record model="ir.module.category" id="category_podcast">
+        <field name="name">Podcast</field>
+        <field name="description">Public user access level for Podcast</field>
+        <field name="sequence">10</field>
+    </record>
+
+    <record model="res.groups" id="group_podcast_user">
+        <field name="name">Podcast User</field>
+        <field name="category_id" ref="category_podcast"/>
+    </record>
+
+    <record id="base.group_user" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('podcast.group_podcast_user'))]"/>
+    </record>
+
+    <record model="res.groups" id="group_podcast_manager">
+        <field name="name">Podcast Manager</field>
+        <field name="category_id" ref="category_podcast"/>
+        <field name="implied_ids" eval="[(4, ref('podcast.group_podcast_user'))]"/>
+    </record>
+
+    <record id="base.group_system" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('podcast.group_podcast_manager'))]"/>
+    </record>
+</odoo>

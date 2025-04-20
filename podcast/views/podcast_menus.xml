@@ -1,0 +1,31 @@
+<odoo>
+    <record id="action_website_podcast_channel" model="ir.actions.act_window">
+        <field name="name">Channels</field>
+        <field name="res_model">podcast.channel</field>
+        <field name="view_mode">kanban,form,list</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="action_website_podcast_episode" model="ir.actions.act_window">
+        <field name="name">Episodes</field>
+        <field name="res_model">podcast.episode</field>
+        <field name="view_mode">kanban,form,list</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem id="menu_website_podcast_root" name="Podcast" parent="website.menu_website_configuration" sequence="40"
+              groups="podcast.group_podcast_user"/>
+
+    <menuitem id="menu_website_podcast_channel" name="Channels" parent="menu_website_podcast_root"
+              action="action_website_podcast_channel"
+              groups="podcast.group_podcast_user"
+              sequence="1"/>
+    <menuitem id="menu_website_podcast_episode" name="Episodes" parent="menu_website_podcast_root"
+              action="action_website_podcast_episode"
+              groups="podcast.group_podcast_user"
+              sequence="2"/>
+    <menuitem id="menu_website_podcast_link" name="Links" parent="menu_website_podcast_root"
+              action="podcast.action_website_podcast_link"
+              groups="podcast.group_podcast_user"
+              sequence="3"/>
+</odoo>
