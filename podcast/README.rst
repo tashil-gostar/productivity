@@ -43,6 +43,6 @@ Features
 Support
 ------------
 
-**Developer:** Tashilgostar
+**Developer:** TashilGostar
 **Website:** https://tashilgostar.com
 **Email:** support@tashilgostar.com
