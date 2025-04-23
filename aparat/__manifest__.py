@@ -1,5 +1,5 @@
 {
-    'name': 'Aparat Video Integration - Seamless Video Management for Odoo',
+    'name': 'Aparat for Odoo',
     'category': 'Productivity',
     'summary': 'Free & Open Source Aparat.com Integration for Odoo - Embed Persian Videos',
     'description': """
