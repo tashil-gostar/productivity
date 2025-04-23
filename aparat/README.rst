@@ -1,5 +1,5 @@
 =======================
-Aparat Video Integration - Seamless Video Management for Odoo
+Aparat for Odoo
 =======================
 
 .. image:: https://img.shields.io/badge/Odoo-18.0-purple.svg
