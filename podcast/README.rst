@@ -1,5 +1,5 @@
 =======================
-Podcast Management Module
+Podcast Manager - Professional Podcast Management for Odoo
 =======================
 
 .. image:: https://img.shields.io/badge/Odoo-18.0-purple.svg
@@ -8,8 +8,12 @@ Podcast Management Module
 .. image:: https://img.shields.io/badge/license-AGPL--3-green.svg
    :target: https://www.gnu.org/licenses/agpl-3.0
    :alt: License: AGPL-3
+.. image:: https://img.shields.io/badge/category-Marketing/Podcast-blue.svg
+   :alt: Category: Marketing/Podcast
 
-This module allows you to **manage podcasts, channels, and episodes** in Odoo 18, with support for audio files, metadata, and integration with Shenoto.
+Professional Podcast Management Solution for Odoo - Create, Manage and Publish Podcasts with Ease
+
+Elevate your podcasting workflow with this powerful Odoo module designed for podcast creators, media companies, and content marketers.
 
 ------------
 Live Demo
@@ -19,30 +23,55 @@ Experience the module in action:
 **Demo URL:** https://sazmanyar.tashilgostar.com/podcasts
 
 ------------
-Features
+Key Features
 ------------
 
-✅ **Podcast Channel Management**
-   - Create and organize podcast channels.
-   - Set cover images, descriptions, and categories.
+🎙️ **Complete Podcast Ecosystem**
+   - Create and organize podcast channels
+   - Manage episodes with detailed metadata
+   - Set cover images, descriptions, and categories
+   - Track duration and release dates
 
-✅ **Episode Management**
-   - Upload audio files or add external links (e.g., Shenoto).
-   - Track metadata (duration, release date, tags).
+🎙️ **Shenoto Integration (Special for Persian Podcasters)**
+   - Direct import from shenoto.com by pasting episode URLs
+   - Preserves all Shenoto metadata and audio quality
+   - Perfect for Persian podcasters using Shenoto platform
 
-✅ **Shenoto Integration**
-   - Import episodes directly from Shenoto via URL.
+🎙️ **Website Ready**
+   - Designed to work with `website_podcast` for frontend display
+   - Add a dedicated page for podcast to your website (www.yourwebsite.com/podcasts)
+   - Support for both LTR and RTL (Arabic, Persian etc.) preferences
 
-✅ **Website Ready**
-   - Designed to work with `website_podcast` for frontend display.
+🎙️ **Security & Access Control**
+   - Custom permissions for podcast managers (Podcast Manager)
+   - Role-based access management
 
-✅ **Security & Access Control**
-   - Custom permissions for podcast managers.
+------------
+Technical Details
+------------
+
+**Dependencies:**
+    - website
+    - mail (used for chatter)
+
+**Includes:**
+    - Security configurations
+    - Channel and episode management views
+    - Import wizards
+    - Custom SCSS styling
 
 ------------
 Support
 ------------
 
-**Developer:** TashilGostar
+**Maintainer:** Tashilgostar
+
 **Website:** https://tashilgostar.com
+
 **Email:** support@tashilgostar.com
+
+------------
+License
+------------
+
+This module is licensed under AGPL-3.
