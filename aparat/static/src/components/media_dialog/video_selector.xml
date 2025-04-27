@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="aparat.VideoSelector" t-inherit="web_editor.VideoSelector" t-inherit-mode="extension">
+        <xpath expr="//small/b" position="before">
+            <span><b><i>Aparat</i></b>, </span>
+        </xpath>
+    </t>
+</templates>
