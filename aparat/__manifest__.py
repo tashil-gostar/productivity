@@ -4,11 +4,11 @@
     'summary': 'Free & Open Source Aparat.com Integration for Odoo - Embed Persian Videos',
     'description': """
 
-                                          Free Aparat Video Integration for Odoo - Persian Video Content Made Easy
+                                                             Free Aparat Video Integration for Odoo - Persian Video Content Made Easy
 
-                                          This open source module provides seamless integration between Odoo and Aparat.com (آپارات), Iran's leading video sharing platform. Easily embed and manage Aparat videos directly within your Odoo website.
+                                                             This open source module provides seamless integration between Odoo and Aparat.com (آپارات), Iran's leading video sharing platform. Easily embed and manage Aparat videos directly within your Odoo website.
 
-                                          🎬 Key Features:
+                                                             🎬 Key Features:
 
     • Free & Open Source:
       - 100% free to use
@@ -46,6 +46,9 @@
     'version': '18.0.1.0.0',
     'depends': [
         'html_editor',
+    ],
+    'images': [
+        'static/description/banner.gif',
     ],
     'assets': {
         'web_editor.assets_media_dialog': [
