@@ -1,155 +1,609 @@
-<div class="odoo-app-description">
-    <h2>Aparat for Odoo</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aparat for Odoo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        @font-face {
+            font-family: 'Vazirmatn';
+            src: url('https://cdnjs.cloudflare.com/ajax/libs/Vazirmatn/33.003/Vazirmatn-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
 
-    <p class="subtitle">Free & Open Source Aparat.com Integration for Odoo - Embed Persian Videos</p>
+        :root {
+            --odoo-primary: #875A7B;
+            --odoo-secondary: #68465f;
+            --light-bg: #f9f9f9;
+            --border-color: #e0e0e0;
+        }
 
-    <p>This module provides seamless integration between Odoo and Aparat.com (آپارات), Iran's leading video sharing platform. Easily embed and manage Aparat videos directly within your Odoo website.</p>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    <div class="badges">
-        <span class="badge odoo-version">Odoo 18.0</span>
-        <span class="badge license">License: AGPL-3</span>
-        <span class="badge status">Free & Open Source</span>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header h1 {
+            color: var(--odoo-primary);
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+
+        .header .subtitle {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .hero-image {
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Module Description */
+        .module-description {
+            margin: 20px 0;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Badges */
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .badge-purple {
+            background-color: var(--odoo-primary);
+        }
+
+        .badge-green {
+            background-color: #28a745;
+        }
+
+        .badge-blue {
+            background-color: #1E88E5;
+        }
+
+        .badge-orange {
+            background-color: #FF5722;
+        }
+
+        /* Demo Section */
+        .section {
+            margin: 40px 0;
+        }
+
+        .section-title {
+            color: var(--odoo-primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 24px;
+        }
+
+        .demo-container {
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .demo-link {
+            margin: 10px 0;
+        }
+
+        .demo-button {
+            display: inline-block;
+            background-color: var(--odoo-primary);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /* Features */
+        .features-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .feature-item {
+            background-color: var(--light-bg);
+            border-left: 4px solid var(--odoo-primary);
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .feature-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-title i {
+            margin-right: 10px;
+            color: var(--odoo-primary);
+        }
+
+        .feature-details {
+            list-style-type: none;
+        }
+
+        .feature-details li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .feature-details li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--odoo-primary);
+        }
+
+        /* How It Works */
+        .how-it-works {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .step-box {
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .step-number {
+            background-color: var(--odoo-primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 18px;
+        }
+
+        .step-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Requirements & Installation */
+        .list-container {
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .requirements-list, .installation-list {
+            list-style-position: inside;
+            margin-left: 20px;
+        }
+
+        .requirements-list li, .installation-list li {
+            margin-bottom: 10px;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            margin-top: 15px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            color: #555;
+        }
+
+        /* RTL Support */
+        .rtl-text {
+            font-family: 'Vazirmatn', Arial, sans-serif;
+            direction: rtl;
+            text-align: right;
+        }
+
+        /* Support Section */
+        .support-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .support-card {
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .support-card.community {
+            background-color: #f5f0ff;
+        }
+
+        .support-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .support-title i {
+            margin-right: 10px;
+            color: var(--odoo-primary);
+        }
+
+        .support-details p {
+            margin-bottom: 8px;
+        }
+
+        .support-list {
+            list-style-type: none;
+            margin-top: 10px;
+        }
+
+        .support-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .support-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--odoo-primary);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .primary-button {
+            background-color: var(--odoo-primary);
+            color: white;
+        }
+
+        .primary-button:hover {
+            background-color: var(--odoo-secondary);
+        }
+
+        .secondary-button {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .secondary-button:hover {
+            background-color: #5a6268;
+        }
+
+        @media (max-width: 768px) {
+            .features-list {
+                grid-template-columns: 1fr;
+            }
+
+            .how-it-works {
+                grid-template-columns: 1fr;
+            }
+
+            .support-container {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Aparat for Odoo</h1>
+            <p class="subtitle">Free & Open Source Aparat.com Integration for Odoo - Embed Persian Videos</p>
+        </div>
+
+        <!-- Hero Section -->
+        <!--<div class="hero-section">
+            <img src="600X300" alt="Aparat for Odoo Demo" class="hero-image">
+        </div>-->
+
+        <!-- Module Description -->
+        <div class="module-description">
+            <p>This module provides seamless integration between Odoo and Aparat.com (آپارات), Iran's leading video sharing platform. Easily embed and manage Aparat videos directly within your Odoo website.</p>
+        </div>
+
+        <!-- Badges -->
+        <div class="badges">
+            <span class="badge badge-purple">Odoo 18.0</span>
+            <span class="badge badge-green">License: AGPL-3</span>
+            <span class="badge badge-blue">Free & Open Source</span>
+            <span class="badge badge-orange rtl-text">پشتیبانی از زبان فارسی</span>
+        </div>
+
+        <!-- Demo Section -->
+        <div class="section">
+            <h2 class="section-title">Live Demo</h2>
+            <div class="demo-container">
+                <p>Experience the module in action:</p>
+                <p class="demo-link"><strong>Demo URL:</strong> <a href="https://www.tashilgostar.com/slides/slide/149/share" target="_blank">https://www.tashilgostar.com/slides/slide/149/share</a></p>
+                <a href="https://www.tashilgostar.com/slides/slide/149/share" class="demo-button" target="_blank">View Demo</a>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="section">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-list">
+                <div class="feature-item">
+                    <div class="feature-title">
+                        <i class="fas fa-check-circle"></i> Free & Open Source
+                    </div>
+                    <ul class="feature-details">
+                        <li>100% free to use</li>
+                        <li>AGPL-3 licensed</li>
+                        <li>Community-driven development</li>
+                    </ul>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-title">
+                        <i class="fas fa-film"></i> Aparat Integration
+                    </div>
+                    <ul class="feature-details">
+                        <li>Simple video embedding with Aparat URLs</li>
+                        <li>Supports all Aparat video formats</li>
+                        <li>Maintains original video quality</li>
+                        <li>Special Aparat tab in Odoo's media dialog</li>
+                        <li>Search and select videos directly from Aparat</li>
+                    </ul>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-title">
+                        <i class="fas fa-tools"></i> Easy to Use
+                    </div>
+                    <ul class="feature-details">
+                        <li>Insert videos in blog posts/products/pages</li>
+                        <li>Responsive video player</li>
+                        <li>Video preview in backend</li>
+                        <li>Works seamlessly with Odoo's <code>html_editor</code> module</li>
+                        <li>Dedicated SCSS files for perfect visual integration</li>
+                    </ul>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-title">
+                        <i class="fas fa-users"></i> Perfect For
+                    </div>
+                    <ul class="feature-details">
+                        <li>Iranian businesses using Aparat</li>
+                        <li>Persian content creators</li>
+                        <li>Educational institutions</li>
+                        <li>Non-profit organizations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Persian Section -->
+        <div class="section">
+            <h2 class="section-title rtl-text">پشتیبانی ویژه برای زبان فارسی</h2>
+            <div class="demo-container rtl-text">
+                <p>این ماژول به طور ویژه برای کاربران ایرانی و فارسی‌زبان توسعه داده شده است. با نصب این ماژول، می‌توانید به راحتی ویدیوهای آپارات را در وب‌سایت اودو خود استفاده کنید.</p>
+                <p>آپارات بزرگترین پلتفرم اشتراک‌گذاری ویدیو در ایران است و این ماژول به شما امکان می‌دهد تا به آسانی ویدیوهای آپارات را در محتوای وب‌سایت خود قرار دهید.</p>
+            </div>
+        </div>
+
+        <!-- How It Works Section -->
+        <div class="section">
+            <h2 class="section-title">How It Works</h2>
+            <div class="how-it-works">
+                <div class="step-box">
+                    <div class="step-number">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3 class="step-title">Install the Module</h3>
+                    <p>Install the Aparat module from Odoo Apps store</p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-number">
+                        <i class="fas fa-plus-circle"></i>
+                    </div>
+                    <h3 class="step-title">Add Aparat Videos</h3>
+                    <p>Use the new Aparat tab in the media selector</p>
+                </div>
+
+                <div class="step-box">
+                    <div class="step-number">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="step-title">Publish Your Content</h3>
+                    <p>Your Aparat videos now appear seamlessly on your Odoo website</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Requirements Section -->
+        <div class="section">
+            <h2 class="section-title">Requirements</h2>
+            <div class="list-container">
+                <ul class="requirements-list">
+                    <li>Odoo 18.0</li>
+                    <li>html_editor module</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Installation Section -->
+        <div class="section">
+            <h2 class="section-title">Installation</h2>
+            <div class="list-container">
+                <ol class="installation-list">
+                    <li>Install the module through Odoo Apps</li>
+                    <li>The module will auto-install required dependencies</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Can I use this module with older versions of Odoo?</div>
+                    <div class="faq-answer">This module is specifically designed for Odoo 18.0. For older versions, please contact us for compatibility information.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Is this module compatible with other video platforms?</div>
+                    <div class="faq-answer">Currently, this module is specifically designed for Aparat.com integration. For other platforms, Odoo offers built-in support for YouTube and Vimeo.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question rtl-text">آیا این ماژول از زبان فارسی پشتیبانی می‌کند؟</div>
+                    <div class="faq-answer rtl-text">بله، این ماژول به طور کامل از زبان فارسی پشتیبانی می‌کند و برای کاربران ایرانی بهینه‌سازی شده است.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support Section -->
+        <div class="section">
+            <h2 class="section-title">Support</h2>
+            <div class="support-container">
+                <div class="support-card">
+                    <div class="support-title">
+                        <i class="fas fa-user-tie"></i> Developer Support
+                    </div>
+                    <div class="support-details">
+                        <p><strong>Developer:</strong> TashilGostar</p>
+                        <p><strong>Maintainer:</strong> Tashilgostar</p>
+                        <p><strong>Website:</strong> <a href="https://tashilgostar.com" target="_blank">https://tashilgostar.com</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:support@tashilgostar.com">support@tashilgostar.com</a></p>
+                    </div>
+                </div>
+
+                <div class="support-card community">
+                    <div class="support-title">
+                        <i class="fas fa-users"></i> Community Support
+                    </div>
+                    <div class="support-details">
+                        <p>This module is supported by the community:</p>
+                        <ul class="support-list">
+                            <li>Contributions welcome</li>
+                            <li>Free community support</li>
+                            <li>GitHub issues tracking</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- License Section -->
+        <div class="section">
+            <h2 class="section-title">License</h2>
+            <div class="list-container">
+                <p>This module is licensed under AGPL-3.</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="cta-buttons">
+                <!--<a href="#" class="cta-button primary-button">Download Now</a>-->
+                <a href="https://tashilgostar.com" class="cta-button secondary-button" target="_blank">Learn More</a>
+            </div>
+        </div>
     </div>
-
-    <h3>Live Demo</h3>
-    <p>Experience the module in action:<br>
-    <strong>Demo URL:</strong> <a href="https://www.tashilgostar.com/slides/slide/149/share" target="_blank">https://www.tashilgostar.com/slides/slide/149/share</a></p>
-
-    <h3>Key Features</h3>
-    <ul class="feature-list">
-        <li>
-            <strong>🎬 Free & Open Source</strong>
-            <ul>
-                <li>100% free to use</li>
-                <li>AGPL-3 licensed</li>
-                <li>Community-driven development</li>
-            </ul>
-        </li>
-        <li>
-            <strong>🎬 Aparat Integration</strong>
-            <ul>
-                <li>Simple video embedding with Aparat URLs</li>
-                <li>Supports all Aparat video formats</li>
-                <li>Maintains original video quality</li>
-                <li>Special Aparat tab in Odoo's media dialog</li>
-                <li>Search and select videos directly from Aparat</li>
-            </ul>
-        </li>
-        <li>
-            <strong>🎬 Easy to Use</strong>
-            <ul>
-                <li>Insert videos in blog posts/products/pages</li>
-                <li>Responsive video player</li>
-                <li>Video preview in backend</li>
-                <li>Works seamlessly with Odoo's <code>html_editor</code> module</li>
-                <li>Dedicated SCSS files for perfect visual integration</li>
-            </ul>
-        </li>
-        <li>
-            <strong>🎬 Perfect For</strong>
-            <ul>
-                <li>Iranian businesses using Aparat</li>
-                <li>Persian content creators</li>
-                <li>Educational institutions</li>
-                <li>Non-profit organizations</li>
-            </ul>
-        </li>
-    </ul>
-
-    <h3>Requirements</h3>
-    <ul>
-        <li>Odoo 18.0</li>
-        <li>html_editor module</li>
-    </ul>
-
-    <h3>Installation</h3>
-    <ol>
-        <li>Install the module through Odoo Apps</li>
-        <li>The module will auto-install required dependencies</li>
-    </ol>
-
-    <h3>Support</h3>
-    <div class="support-info">
-        <p><strong>Developer:</strong> TashilGostar</p>
-        <p><strong>Maintainer:</strong> Tashilgostar</p>
-        <p><strong>Website:</strong> <a href="https://tashilgostar.com" target="_blank">https://tashilgostar.com</a></p>
-        <p><strong>Email:</strong> <a href="mailto:support@tashilgostar.com">support@tashilgostar.com</a></p>
-        <p class="community">👥 <strong>Community Supported</strong><br>
-        - Contributions welcome<br>
-        - Free community support</p>
-    </div>
-
-    <h3>License</h3>
-    <p>This module is licensed under AGPL-3.</p>
-</div>
-
-<style>
-.odoo-app-description {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-.odoo-app-description h2 {
-    color: #875A7B;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-}
-.odoo-app-description .subtitle {
-    font-size: 1.1em;
-    color: #666;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-.odoo-app-description h3 {
-    color: #875A7B;
-    margin-top: 25px;
-}
-.feature-list {
-    list-style-type: none;
-    padding-left: 0;
-}
-.feature-list > li {
-    margin-bottom: 20px;
-}
-.feature-list > li > ul {
-    padding-left: 20px;
-    margin-top: 8px;
-}
-.support-info p {
-    margin-bottom: 8px;
-}
-.support-info .community {
-    margin-top: 15px;
-    padding-left: 20px;
-}
-.badges {
-    margin: 20px 0;
-}
-.badge {
-    display: inline-block;
-    padding: 4px 8px;
-    border-radius: 3px;
-    margin-right: 10px;
-    font-size: 12px;
-    font-weight: bold;
-    color: white;
-}
-.odoo-version {
-    background-color: purple;
-}
-.license {
-    background-color: green;
-}
-.status {
-    background-color: #1E88E5;
-}
-code {
-    background: #f5f5f5;
-    padding: 2px 4px;
-    border-radius: 3px;
-    font-family: monospace;
-}
-</style>
+</body>
+</html>
