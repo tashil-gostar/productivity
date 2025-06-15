@@ -1,0 +1,70 @@
+.audio-player {
+  background-color: #F9FAFA;
+  padding: 8px;
+  border-radius: 99px;
+}
+
+.audio-player img {
+  width: 25px;
+  cursor: pointer;
+}
+
+.audio-player .play-btn {
+  border: none !important;
+  background: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.audio-player .play-btn img {
+  width: 65px;
+  height: 65px;
+}
+
+.progress-container {
+  background: #e0e0e0;
+  border-radius: 5px;
+  height: 6px;
+  width: 100%;
+  margin: 10px 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.progress-bar {
+  background: #2B2A4C;
+  height: 100%;
+  width: 0%;
+  border-radius: 5px;
+  transition: width 0.1s;
+}
+
+.controls {
+  min-width: max-content;
+}
+
+.controls button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.time {
+  font-size: 14px;
+  color: #333;
+}
+
+@media only screen and (max-width: 768px) {
+  .audio-player img {
+    width: 21px;
+  }
+
+  .audio-player .play-btn img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .audio-player .controls {
+    font-size: 14px;
+  }
+}
