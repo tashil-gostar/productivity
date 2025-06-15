@@ -52,5 +52,5 @@
     },
     "application": True,
     "installable": True,
-    "price": 0.99
+    "price": 4.99
 }
