@@ -1,0 +1,39 @@
+<odoo>
+    <record id="website_podcast_channel_action" model="ir.actions.act_window">
+        <field name="name">Channels</field>
+        <field name="res_model">website.podcast.channel</field>
+        <field name="view_mode">kanban,form,list</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="website_podcast_episode_action" model="ir.actions.act_window">
+        <field name="name">Episodes</field>
+        <field name="res_model">website.podcast.episode</field>
+        <field name="view_mode">kanban,form,list</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="website_podcast_link_action" model="ir.actions.act_window">
+        <field name="name">Links</field>
+        <field name="res_model">website.podcast.link</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem id="menu_website_podcast_root" name="Podcast"
+        parent="website.menu_website_configuration" sequence="40"
+        groups="website_podcast.group_podcast_user" />
+
+    <menuitem id="menu_website_podcast_channel" name="Channels" parent="menu_website_podcast_root"
+        action="website_podcast_channel_action"
+        groups="website_podcast.group_podcast_user"
+        sequence="1" />
+    <menuitem id="menu_website_podcast_episode" name="Episodes" parent="menu_website_podcast_root"
+        action="website_podcast_episode_action"
+        groups="website_podcast.group_podcast_user"
+        sequence="2" />
+    <menuitem id="menu_website_podcast_link" name="Links" parent="menu_website_podcast_root"
+        action="website_podcast_link_action"
+        groups="website_podcast.group_podcast_user"
+        sequence="3" />
+</odoo>
