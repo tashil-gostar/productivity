@@ -12,14 +12,14 @@
                                  style="white-space:nowrap;">
                                 <span class="py-1">Playlists: </span>
                                 <span class="py-1 px-1 mx-1">
-                                    <a href="/podcasts?channel_id=0" class="text-dark"
+                                    <a href="/podcasts?channelId=0" class="text-dark"
                                        t-att-class="'font-weight-bod' if not channel else 'text-dark'">
                                         All
                                     </a>
                                 </span>
                                 <t t-foreach="channels" t-as="channel">
                                     <span class="py-1 px-1 mx-1">
-                                        <a t-att-href="'/podcasts?channel_id=%s' % channel['id']" class="text-dark"
+                                        <a t-att-href="'/podcasts?channelId=%s' % channel['id']" class="text-dark"
                                            t-att-class="'font-weight-bold' if channel['id'] == active_channel_id else 'text-dark'">
                                             <t t-out="channel['title']"/>
                                         </a>
@@ -60,7 +60,7 @@
                     </div>
                     <div class="d-flex flex-column flex-lg-row">
                         <div class="col-12 col-lg-3 me-0">
-                            <img t-att-src="episode.image_1024 and image_data_uri(episode.image_1024) or ''"
+                            <img t-att-src="episode.image_1920 and image_data_uri(episode.image_1920) or ''"
                                  class="website-podcast-episode-cover"/>
                         </div>
                         <div class="col-12 col-lg-9 mt-3 mb-4 mt-lg-3 ps-lg-4">
@@ -74,10 +74,10 @@
                                     </div>
                                     <div class="d-none d-md-flex align-center justify-content-center gap-3">
                                         <t t-name="website_podcast.share_socials">
-                                            <button class="border-0 bg-transparent" id="share-twitter-btn">
-                                                <img t-att-src="'/website_podcast/static/src/img/icons/twitter.svg'"/>
+                                            <button class="border-0 bg-transparent" id="share-twitter-btn" title="Share on X">
+                                                <img t-att-src="'/website_podcast/static/src/img/icons/twitter.png'" width="20px"/>
                                             </button>
-                                            <button class="border-0 bg-transparent" id="share-linkedin-btn">
+                                            <button class="border-0 bg-transparent" id="share-linkedin-btn" title="Share on Linkedin">
                                                 <img t-att-src="'/website_podcast/static/src/img/icons/linkedin.svg'"/>
                                             </button>
                                         </t>
@@ -118,9 +118,17 @@
                                 <p class="text-black text-align-justify opacity-75 font-small"><t
                                         t-out="episode.short_description"/></p>
 
-                                <owl-component name="website_podcast.audio_player" t-att-props="json.dumps({
-                                    'audioUrl': episode.file_url,
-                                })"/>
+                                <t t-if="episode.file_url">
+                                    <owl-component name="website_podcast.audio_player" t-att-props="json.dumps({
+                                        'audioUrl': episode.file_url,
+                                    })"/>
+                                </t>
+                                <t t-else="">
+                                    <div class="alert alert-light rounded-5">
+                                        <i class="fa fa-warning ms-1 me-2"/>|
+                                        <b>امکان پخش این اپیزود وجود ندارد، لطفا بعدا تلاش کنید!</b>
+                                    </div>
+                                </t>
 
                                 <div class="d-flex font-small flex-column flex-md-row align-center text-black mt-4 justify-content-between">
                                     <div class="d-flex align-center">
@@ -173,7 +181,7 @@
                         <div class="d-flex d-md-none align-center justify-content-center mt-5 mt-lg-0 gap-3">
                             <t t-name="website_podcast.share_socials">
                                 <button class="border-0 bg-transparent" id="share-twitter-btn">
-                                    <img t-att-src="'/website_podcast/static/src/img/icons/twitter.svg'"/>
+                                    <img t-att-src="'/website_podcast/static/src/img/icons/twitter.png'" width="20px"/>
                                 </button>
                                 <button class="border-0 bg-transparent" id="share-linkedin-btn">
                                     <img t-att-src="'/website_podcast/static/src/img/icons/linkedin.svg'"/>
@@ -217,6 +225,16 @@
                     </div>
                 </div>
                 <div itemprop="description" class="oe_structure oe_empty mt0" id="podcast_top_description"/>
+                    <div t-attf-class="mx-auto #{readableClass}">
+                    <div id="o_wblog_post_comments" t-attf-class="pt-4 o_container_small">
+                        <div groups="base.group_public" class="small mb-4">
+                            <a href="/web/login?redirect=/blog/{{slug(blog_post.blog_id)}}/{{slug(blog_post)}}#discussion" class="btn btn-sm btn-primary"><b>Sign in</b></a> to leave a comment
+                        </div>
+                        <t t-call="portal.message_thread">
+                            <t t-set="object" t-value="episode"/>
+                        </t>
+                    </div>
+                </div>
                 <section class="s_text_block pt0 pb0 o_colored_level about-podcast" data-snippet="s_text_block"
                          data-name="Text">
                     <div class="bg-lines container position-absolute">

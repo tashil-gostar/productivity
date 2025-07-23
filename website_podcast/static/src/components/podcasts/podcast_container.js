@@ -1,10 +1,10 @@
 /** @odoo-module **/
 
-import {Component, useState, onMounted} from '@odoo/owl';
-import {useService} from '@web/core/utils/hooks';
+import { Component, useState, onMounted } from '@odoo/owl';
+import { useService } from '@web/core/utils/hooks';
 import { rpc } from "@web/core/network/rpc";
-import {registry} from '@web/core/registry';
-import {PodcastList} from './podcast_list';
+import { registry } from '@web/core/registry';
+import { PodcastList } from './podcast_list';
 
 const {DateTime} = luxon;
 
@@ -24,25 +24,13 @@ export class PodcastContainer extends Component {
             hasMore: true,
             hasPrev: false,
             page: 1,
+            totalPages: 1,
+            loading: true,
         });
 
         onMounted(async () => {
             await this.fetchData(this.getUrlSearchParameters())
         });
-    }
-
-    async fetchPodcasts(params) {
-        const result = await rpc('/get-podcasts', params);
-        result.episodes?.forEach((item) => {
-            const rawDate = item.create_date;
-            item.create_date = DateTime.fromISO(new Date(rawDate).toISOString(), {
-                outputCalendar: 'persian',
-            }).toLocaleString(DateTime.DATE_MED);
-        });
-
-        this.state.hasMore = result.has_more;
-        this.state.hasPrev = result.has_prev;
-        return result.episodes || [];
     }
 
     paramBuilder(params) {
@@ -72,12 +60,16 @@ export class PodcastContainer extends Component {
         const result = await rpc('/get-podcasts', params)
         result.episodes?.map(function (item) {
             const rawDate = item.create_date;
-            item.create_date = DateTime.fromISO(new Date(rawDate).toISOString(), {outputCalendar: 'persian'}).toLocaleString(DateTime.DATE_MED)
+            item.create_date = DateTime.fromISO(new Date(rawDate).toISOString(),
+                {outputCalendar: 'persian'}).toLocaleString(DateTime.DATE_MED)
         })
         this.state.query = params.query
         this.state.hasMore = result.has_more;
         this.state.currentChannel = Number(params.channelId);
         this.state.podcasts = result.episodes;
+        this.state.page = parseInt(result.current_page);
+        this.state.totalPages = parseInt(result.pages);
+        this.state.loading = false;
     }
 
     async fetchAndUpdate(params) {
@@ -91,16 +83,9 @@ export class PodcastContainer extends Component {
         return Object.fromEntries(url.searchParams.entries());
     }
 
-    updateUrlSearchParameters(params) {
-        const url = new URL(window.location.href);
-        for (const key in params) {
-            if (params[key]) {
-                url.searchParams.set(key, params[key]);
-            } else {
-                url.searchParams.delete(key);
-            }
-        }
-        window.history.pushState(null, '', url.toString());
+    async goToPage(page) {
+        debugger;
+        await this.fetchAndUpdate({page});
     }
 
     async handleSearch() {

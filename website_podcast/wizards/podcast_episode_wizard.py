@@ -36,7 +36,7 @@ class PodcastEpisodeWizard(models.TransientModel):
         if not fetched_data:
             raise UserError(_("Something wrong while fetching the data!"))
 
-        image_response = requests.get(fetched_data["cover_url"], timeout=10)
+        image_response = requests.get(fetched_data["cover_url"])
 
         if image_response.status_code != 200:
             raise UserError(_("Something wrong while fetching the data!"))

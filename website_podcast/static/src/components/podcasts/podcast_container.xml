@@ -1,8 +1,8 @@
 <templates xml:space="preserve">
     <t t-name="website_podcast.podcastContainer">
-        <div class="d-flex container flex-column flex-lg-row flex-wrap o_website_podcast pt-4">
+        <div class="d-flex container flex-column flex-lg-row flex-wrap o_website_podcast pt-3 pt-md-4">
             <div class="col-12 d-flex flex-column flex-column-reverse flex-md-column flex-lg-row align-center">
-                <div class="d-flex flex-row align-center col-lg-8 overflow-auto gap-2 mb-4" style="white-space:nowrap;">
+                <div class="d-flex flex-row align-center col-lg-8 overflow-auto gap-2 mb-1 mb-md-4" style="white-space:nowrap;">
                     <span class="bg-transparent border-0 text-black opacity-75 py-2" role="button">Playlists:</span>
                     <button class="channel_link text-black opacity-75 bg-transparent border-0"
                             t-attf-class="{{state.currentChannel === 0 || !state.currentChannel ? 'font-weight-bold' : ''}}"
@@ -12,7 +12,7 @@
                     <t t-foreach="props.channels" t-as="channel" t-key="channel['id']">
                         <button t-att-data-channel-id="channel['id']"
                         t-on-click="handleChannelSelect"
-                        t-attf-class="{{channel.id === state.currentChannel ? 'font-weight-bold' : ''}}"
+                        t-attf-class="{{channel.id === state.currentChannel ? 'text-primary font-weight-bold opacity-100' : ''}}"
                         class="channel_link text-black opacity-75 bg-transparent border-0"
                         t-out="channel['title']"/>
                     </t>
@@ -20,7 +20,7 @@
 
                 <div class="hidden d-block col-lg-1"></div>
 
-                <div class="col-12 col-lg-3 mb-3 mb-md-4">
+                <div class="col-12 col-lg-3 mb-0 mb-md-4">
                     <div class="input-group h-fit-content o_website_podcast_search mb-1">
                         <input class="o_portal_podcast_input search-query form-control oe_search_box border-end-0"
                                id="podcast_name_input"
@@ -36,8 +36,27 @@
 
             <div class="o_wslides_home_nav position-relative d-flex flex-column align-center col-12 col-lg-8">
                 <div class="d-flex flex-column me-0">
-                    <PodcastList podcasts="state.podcasts" query="state.query" removeSearchQuery="removeSearchQuery.bind(this)" />
+                    <PodcastList podcasts="state.podcasts" loading="state.loading" query="state.query" removeSearchQuery="removeSearchQuery.bind(this)" />
                 </div>
+
+                <t t-if="state.totalPages">
+                    <div id="podcast_pagination" class="mt-3 mb-10 d-flex align-items-center justify-content-center gap-2">
+                        <button t-att-disabled="state.page &gt; 1 ? 0 : 1" t-on-click="() => this.goToPage(state.page - 1)" class="podcast_pagination_page">
+                            <img t-att-src="'/website_podcast/static/src/img/icons/arrow-left.svg'" width="20px" height="20px" style="transform: scaleX(-1) !important;"/>
+                        </button>
+                        <t t-foreach="Array.from({length: state.totalPages}, (_, i) => i + 1)" t-as="i" t-key="i">
+                            <button
+                                class="podcast_pagination_page"
+                                t-attf-class="podcast_pagination_page #{state.page === i ? 'page_active' : ''}"
+                                t-on-click="() => this.goToPage(i)">
+                                <t t-esc="i"/>
+                            </button>
+                        </t>
+                        <button t-att-disabled="state.page &lt; state.totalPages ? 0 : 1" t-on-click="() => this.goToPage(state.page + 1)" class="podcast_pagination_page">
+                            <img t-att-src="'/website_podcast/static/src/img/icons/arrow-left.svg'" width="20px" height="20px"/>
+                        </button>
+                    </div>
+                </t>
             </div>
 
             <div class="hidden d-block col-lg-1"></div>

@@ -53,6 +53,17 @@ class PodcastEpisode(models.Model):
         tracking=True,
     )
 
+    website_visitor_count = fields.Integer(compute="_compute_website_visitor_count", store=False, string="Website visitor count")
+
+    def _compute_website_visitor_count(self):
+        for record in self:
+            page_url = record.website_url
+            website_track_count = self.env['website.track'].search_count([
+                ('url', 'ilike', page_url)
+            ])
+            record.website_visitor_count = website_track_count
+
+
     def action_visit_channel(self):
         action = self.env["ir.actions.actions"]._for_xml_id(
             "website_podcast.website_podcast_channel_action"

@@ -125,6 +125,15 @@
                                             <field name="formatted_duration" />
                                         </div>
                                     </div>
+                                    <div class="col-6 o_kanban_primary_right">
+                                        <div class="d-flex" name="info_total_time">
+                                            <span class="me-auto">
+                                                <label for="website_visitor_count" class="mb0">
+                                                    Vistors</label>
+                                            </span>
+                                            <field name="website_visitor_count" />
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="row border-top pt-2 mt3">
                                     <div class="col-2">

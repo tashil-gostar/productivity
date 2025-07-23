@@ -26,7 +26,6 @@
                                           """,
     "author": "Tashilgostar",
     "website": "https://tashilgostar.com",
-    "support": "support@tashilgostar.com",
     "license": "AGPL-3",
     "depends": ["website", "mail"],
     "data": [
@@ -52,6 +51,9 @@
     },
     "application": True,
     "installable": True,
-    "price": 5.0,
-    "currency": "USD"
+    "price": 24,
+    "currency": 'EUR',
+    'images': [
+        'static/description/banner_screenshot.gif',
+    ],
 }

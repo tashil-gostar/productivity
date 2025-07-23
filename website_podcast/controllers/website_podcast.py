@@ -1,5 +1,8 @@
+import math
+
 from odoo import _, http
 from odoo.http import request
+from werkzeug.exceptions import NotFound
 
 
 class WebsitePodcast(http.Controller):
@@ -16,9 +19,20 @@ class WebsitePodcast(http.Controller):
         csrf=False,
     )
     def list_channels(self, channel=None, page=1, **kwargs):
-        channels = request.env["website.podcast.channel"].search_read(
-            [("is_published", "=", True)], fields=["id", "title"]
+        channels = request.env["website.podcast.channel"].search([
+            ('is_published', '=', True)
+        ])
+        not_empty_channels = channels.filtered(
+            lambda c: c.episodes.filtered(lambda e: e.is_published)
         )
+
+        has_episodes_channels = []
+        for ch in not_empty_channels:
+            has_episodes_channels.append({
+                'id': ch.id,
+                'title': ch.title,
+            })
+
         links = request.env["website.podcast.link"].search_read(
             [], fields=["name", "url"]
         )
@@ -30,7 +44,7 @@ class WebsitePodcast(http.Controller):
             )
 
         response_data = {
-            "channels": channels,
+            "channels": has_episodes_channels,
             "links": links,
             "active_channel_id": channel["id"] if channel else None,
         }
@@ -47,9 +61,19 @@ class WebsitePodcast(http.Controller):
         episode = (
             request.env["website.podcast.episode"].sudo().browse(episode.id).exists()
         )
-        channels = request.env["website.podcast.channel"].search_read(
-            [("is_published", "=", True)], fields=["id", "title"]
+        channels = request.env["website.podcast.channel"].search([
+            ('is_published', '=', True)
+        ])
+        not_empty_channels = channels.filtered(
+            lambda c: c.episodes.filtered(lambda e: e.is_published)
         )
+
+        has_episodes_channels = []
+        for ch in not_empty_channels:
+            has_episodes_channels.append({
+                'id': ch.id,
+                'title': ch.title,
+            })
         episode_ids = (
             request.env["website.podcast.episode"]
             .search([("channel_id", "=", channel["id"])], order="id asc")
@@ -59,7 +83,7 @@ class WebsitePodcast(http.Controller):
         try:
             target_index = episode_ids.index(episode.id)
         except ValueError:
-            return {"error": "Episode not found"}
+            return NotFound()
 
         previous_id = episode_ids[target_index - 1] if target_index > 0 else None
         next_id = (
@@ -72,7 +96,7 @@ class WebsitePodcast(http.Controller):
             "website_podcast.podcasts_episode",
             {
                 "active_channel_id": channel["id"],
-                "channels": channels,
+                "channels": has_episodes_channels,
                 "channel": channel,
                 "episode": episode,
                 "episode_of": target_index + 1,
@@ -90,11 +114,15 @@ class WebsitePodcast(http.Controller):
             limit = 10
             offset = (page - 1) * limit
 
-            domain = [("title", "ilike", search_query), ("is_published", "=", True)]
+            domain = [("is_published", "=", True), ("channel_id.is_published", "=", True)]
             if search_query:
-                domain.append(["title", "ilike", search_query])
+                domain.append('|')
+                domain.append(("title", "ilike", search_query))
+                domain.append('|')
+                domain.append(('short_description', 'ilike', search_query))
+                domain.append(('description', 'ilike', search_query))
             if channel_id:
-                domain.append(["channel_id", "=", channel_id])
+                domain.append(("channel_id", "=", channel_id))
 
             episodes = (
                 request.env["website.podcast.episode"]
@@ -130,6 +158,8 @@ class WebsitePodcast(http.Controller):
             return {
                 "episodes": episodes_data,
                 "has_more": has_more,
+                "pages": math.ceil(total_episodes / limit),
+                "current_page": page,
             }
         except ValueError:
             error_message = _("Invalid input parameters! Please provide a valid input.")

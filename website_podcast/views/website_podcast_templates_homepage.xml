@@ -4,8 +4,8 @@
         <t t-call="website.layout">
             <div id="wrap" class="wrap o_wslides_wrap">
                 <div class="oe_structure oe_empty">
-                    <section class="s_banner overflow-hidden d-flex align-center"
-                        style="height: 445px; background-color:purple; background-image: url(&quot;/website_podcast/static/src/img/cover_podcast.jpg&quot;); background-size: cover; background-position: 55% 65%"
+                    <section class="s_banner overflow-hidden d-flex align-center p-3 p-md-0"
+                        style="height: 445px; background-color:rgba(255,0,0,0.38); background-image: url(&quot;/website_podcast/static/src/img/cover_podcast.webp&quot;); background-size: cover; background-position: 55% 65%"
                         data-snippet="s_banner">
                         <div class="container align-items-center d-flex">
                             <div style="max-width: 600px;" class="text-white">

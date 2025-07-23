@@ -31,7 +31,7 @@ class ShenotoApi:
                 'description': serialized_json['content'],
                 'duration': serialized_json['duration'],
                 'medias': serialized_json['medias'][0]['file'],
-                'cover_url': serialized_json['cover_url'],
+                'cover_url': serialized_json['asset']['children']['thumbnail']['1000'],
             }
             return data
         except requests.RequestException as e:

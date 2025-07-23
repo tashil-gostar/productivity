@@ -9,7 +9,7 @@
                 alt="Play"/>
             </button>
             <div t-ref="progress-container" class="progress-container" t-on-click="seek">
-                <div id="progressBar" class="progress-bar" t-attf-style="width: #{state.progress}%"></div>
+                <div id="progressBar" class="podcast_progress-bar" t-attf-style="width: #{state.progress}%"></div>
             </div>
             <div class="d-flex flex-row align-items-center controls gap-1 gap-sm-2">
                 <button id="speedBtn" class="opacity-75" t-on-click="changeSpeed" t-esc="state.playbackRate + 'x'"></button>

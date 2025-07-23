@@ -1,6 +1,7 @@
 <templates xml:space="preserve">
     <t t-name="website_podcast.copy_link_modal">
         <button class="border-0 bg-transparent copy-link-button"
+                title="Share Link"
                 id="copy-link-button" t-on-click="show_dialog">
             <img t-att-src="'/website_podcast/static/src/img/icons/share.svg'"/>
         </button>
