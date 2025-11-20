@@ -1,0 +1,87 @@
+<templates xml:space="preserve">
+    <t t-name="website_podcast.podcastList">
+        <div class="w-100 d-flex align-items-center font-small mb-2" t-if="props.query and props.query.length">
+            <span class="font-weight-bold me-2">Search Result: </span>
+            <button id="removeSearchQuery" t-on-click="removeSearchQuery" class="border border-secondary bg-transparent rounded-pill text-secondary">
+                <span class="query"><t t-out="props.query"/></span>
+                <i class="fa fa-close ms-1"/>
+            </button>
+        </div>
+        <t t-if="!props.loading and props.podcasts.length > 0">
+            <div t-foreach="props.podcasts" t-as="episode" t-key="episode.id"
+                 class="mobile-podcast-episode transition border mb-2 d-flex flex-column p-3" style="border-radius: 20px">
+                <a class="text-decoration-none text-black" t-attf-href="/podcast/#{episode['channel_id']['id']}/episode/#{episode['id']}">
+                    <div class="d-flex flex-row">
+                        <div class="d-flex align-items-start  me-2 me-md-0">
+                            <img t-attf-src="/web/image/website.podcast.episode/#{episode['id']}/image_256"
+                                 width="110"
+                                 height="110" class="episode-mobile-cover"/>
+                            <img class="episode-mobile-cover-icon" t-att-src="'/website_podcast/static/src/img/icons/cover-play.svg'"/>
+                        </div>
+                        <div class="w-100 d-flex flex-column justify-content-between py-1 ms-md-3">
+                            <div class="d-flex flex-row align-items-start gap-md-3">
+                                <div class="d-flex flex-column w-100">
+                                    <div class="mb-2">
+                                        <h4 class="mb-1 episode-title"><t t-out="episode['title']"></t></h4>
+                                        <span class="text-black text-align-justify opacity-75 short_description mb-1">
+                                            <t t-if="episode['short_description']" t-out="episode['short_description']"/>
+                                        </span>
+                                    </div>
+                                </div>
+                                <img class="d-none d-md-block" t-att-src=" '/website_podcast/static/src/img/icons/play.svg'" width="45"/>
+                            </div>
+                            <div class="d-flex gap-2 d-md-none font-xxs text-black opacity-50 flex-row align-items-center">
+                                <div t-if="episode['contributors'].length" class="contributors d-flex align-center justify-content-start">
+                                    <i class="fa fa-user-o me-1" title="Changed" role="img" aria-label="Changed"/>
+                                    <t t-foreach="episode['contributors']" t-as="contributor" t-key="contributor.id">
+                                        <span><t t-out="contributor['name']"></t><span class="virgool me-1">,</span></span>
+                                    </t>
+                                </div>
+                                <div class="d-flex align-center justify-content-center">
+                                    <i class="fa fa-calendar-o me-1" title="Changed" role="img" aria-label="Changed"/>
+                                    <t t-out="episode['create_date']"/>
+                                </div>
+                                <div class="d-flex align-center justify-content-end">
+                                    <i class="fa fa-file-audio-o me-1" title="Changed" role="img" aria-label="Changed"/>
+                                    <t t-out="episode['channel_id']['title']"></t>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-none d-md-flex flex-row justify-content-between font-small w-100 opacity-50 wp_episode_card_bottom">
+                        <div t-if="episode['contributors'].length"
+                             class="col-4 d-flex align-center contributors justify-content-start">
+                            <i class="fa fa-user-o me-1" title="Changed" role="img" aria-label="Changed"/>
+                            <t t-foreach="episode['contributors']" t-as="contributor" t-key="contributor.id">
+                                <span>
+                                    <t t-out="contributor['name']"></t><span class="virgool me-1">،</span>
+                                </span>
+                            </t>
+                        </div>
+                        <div class="col-4 d-flex align-center">
+                            <i class="fa fa-calendar-o me-1" title="Changed" role="img" aria-label="Changed"/>
+                            <t t-out="episode['create_date']"/>
+                        </div>
+                        <div class="col-4 d-flex align-center justify-content-end">
+                            <i class="fa fa-file-audio-o me-1" title="Changed" role="img" aria-label="Changed"/>
+                            <t t-out="episode['channel_id']['title']"></t>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </t>
+        <t t-elif="props.loading">
+            <div class="alert alert-light mb-5 gap-3 rounded-3 d-flex flex-column align-items-center justify-content-center">
+                <div class="spinner-border text-primary" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
+                <span>Loading...</span>
+            </div>
+        </t>
+        <t t-else="">
+            <div class="alert alert-info mb-5 gap-3 rounded-3 d-flex flex-column align-items-center justify-content-center">
+                <span>No episodes to show</span>
+            </div>
+        </t>
+    </t>
+</templates>

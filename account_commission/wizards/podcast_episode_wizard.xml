@@ -1,0 +1,26 @@
+<odoo noupdate="1">
+    <record id="website_podcast_episode_wizard_form" model="ir.ui.view">
+        <field name="name">website.podcast.episode.wizard.form</field>
+        <field name="model">website.podcast.episode.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Import from Shenoto" modal="true">
+                <group class="oe_title">
+                    <field name="full_url" />
+                </group>
+                <footer>
+                    <button string="Confirm" type="object" name="action_confirm" class="btn-primary" />
+                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="create_episode_shenoto_wizard_action" model="ir.actions.act_window">
+        <field name="name">Import from shenoto</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">website.podcast.episode.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="website_podcast_episode_wizard_form"></field>
+        <field name="target">new</field>
+    </record>
+</odoo>
